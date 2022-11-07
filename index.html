@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS - DROPDOWN</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="dropdown" onmouseover="setDisplayBlock()">
+      <div class="dropdown__select" onmouseleave="setDisplayNone()">
+        <span class="dropdown__selected">Call to action</span>
+        <div class="arrow" id="arrow"></div>
+      </div>
+      <ul
+        class="dropdown__list"
+        id="dropdown__list"
+        onmouseleave="setDisplayNone()"
+      >
+        <li class="dropdown__item" onclick="setDisplayNone()">
+          <span class="dropdown__selected">New project</span>
+          <i class="fa fa-plus-circle"></i>
+        </li>
+        <li class="dropdown__item" onclick="setDisplayNone()">
+          <span class="dropdown__selected">View project</span>
+          <i class="fa fa-user"></i>
+        </li>
+        <li class="dropdown__item" onclick="setDisplayNone()">
+          <span class="dropdown__selected">Setting</span>
+          <i class="fa fa-cog"></i>
+        </li>
+      </ul>
+    </div>
+    <script>
+      function setDisplayNone() {
+        document.getElementById("dropdown__list").style.display = "none";
+        const arrowRotate = document.getElementById("arrow")
+        arrowRotate.classList.remove("arrow__rotate__180")
+        arrowRotate.classList.add("arrow__rotate__0")
+      }
+      function setDisplayBlock() {
+        document.getElementById("dropdown__list").style.display = "block";
+        const arrowRotate = document.getElementById("arrow")
+        arrowRotate.classList.remove("arrow__rotate__0")
+        arrowRotate.classList.add("arrow__rotate__180")
+      }
+    </script>
+  </body>
+</html>
